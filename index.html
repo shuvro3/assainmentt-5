@@ -43,7 +43,7 @@
     <main class="flex flex-col md:flex-row gap-6 p-6 flex-1">
 
         <!-- cards section -->
-         <div class="grid md:grid-cols-3 gap-4 flex-1" id="cardContainerr">
+         <div class="grid md:grid-cols-3 gap-4 flex-1" id="cardContainer">
 
             <!-- national emergency -->
 
@@ -215,9 +215,15 @@
     </main>
 
     <script>
-        let heartCount= 0
-        const heartCountEl= document.getElementById('heartCount')
-        
+      const buttons = document.querySelectorAll('.heartBtn');
+      const heartCount = document.getElementById('heartCount');
+      console.log(buttons)
+
+      for(const button of buttons ){
+        button.addEventListener('click' , function(){
+          heartCount.innerText  = Number(heartCount.innerText) +1;
+        })
+      }
     </script>
 </body>
 </html>
